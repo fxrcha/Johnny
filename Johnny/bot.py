@@ -5,9 +5,8 @@ import discodo
 import discord
 from discord.ext import commands
 
-from Johnny.utils.getenv import getenv
 from Johnny.utils.logger import Logger
-from Johnny.utils.music import start_discodo
+from Johnny.utils.music import run_discodo
 
 
 class Johnny(commands.Bot):
@@ -24,7 +23,8 @@ class Johnny(commands.Bot):
         self.logger = Logger.defaultLogger("Johnny")
         self.discord = Logger.discordLogger()
         self.loop = asyncio.get_event_loop()
-        self.loop.create_task(start_discodo(self))
+
+        self.loop.run_until_complete(run_discodo())
 
     async def on_ready(self):
         self.logger.info("Lil 5ex!")

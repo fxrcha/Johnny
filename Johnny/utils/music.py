@@ -3,11 +3,9 @@ import asyncio
 from Johnny.utils.getenv import getenv
 
 
-async def start_discodo(bot):
-    password = getenv("DISCODO_PW")
-    cmd_line = f"python3 -m discodo --port 6974 --auth {password}"
+async def run_discodo():
+    cmd_line = f"python3 -m discodo --port 6974 --auth youshallnotpass"
     await asyncio.create_subprocess_shell(cmd_line)
-    bot.cjamm.register_node("127.0.0.1", "6974", password=password)
 
 
 async def check_voice_connection(ctx):
