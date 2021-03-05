@@ -1,2 +1,4 @@
 discodo
 discord.py
+python-dotenv
+jishaku
