@@ -2,7 +2,9 @@ import logging
 
 import discord
 
-FORMATTER = logging.Formatter("[%(levelname)s][%(name)s][%(asctime)s]: %(message)s")
+FORMATTER = logging.Formatter(
+    "[%(asctime)s] [%(filename)s] [%(name)s:%(module)s] [%(levelname)s]: %(message)s"
+)
 
 
 class Logger:

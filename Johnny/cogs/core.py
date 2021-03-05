@@ -6,7 +6,7 @@ from Johnny.utils.logger import Logger
 class Core(commands.Cog):
     patching = True
 
-    def __init__(self, bot) -> None:
+    def __init__(self, bot: Johnny) -> None:
         self.bot = bot
         self.logger = Logger.cogLogger(self)
 

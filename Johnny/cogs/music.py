@@ -1,14 +1,17 @@
 from discord.ext import commands
 from Johnny.bot import Johnny
+from Johnny.utils.getenv import getenv
 from Johnny.utils.logger import Logger
 
 
 class Music(commands.Cog):
-    patching = True
+    patching = False
 
-    def __init__(self, bot) -> None:
+    def __init__(self, bot: Johnny) -> None:
         self.bot = bot
         self.logger = Logger.cogLogger(self)
+
+        self.bot.cjamm.register_node("localhost", "6974", password=getenv("DISCODO_PW"))
 
 
 def setup(bot: Johnny):
@@ -17,4 +20,4 @@ def setup(bot: Johnny):
         bot.add_cog(Music(bot))
 
     elif Music.patching:
-        return bot.logger.warn(f"Core is in patching status.")
+        return bot.logger.warn(f"Music is in patching status.")
