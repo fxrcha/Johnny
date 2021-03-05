@@ -15,7 +15,7 @@ class Logger:
         if not logger.hasHandlers():
             streamhandler = logging.StreamHandler()
             streamhandler.setFormatter(FORMATTER)
-            filehandler = logging.FileHandler(f"Siri/logs/{name}.txt", "a")
+            filehandler = logging.FileHandler(f"Johnny/logs/{name}.txt", "a")
             filehandler.setFormatter(FORMATTER)
             logger.addHandler(streamhandler)
             logger.addHandler(filehandler)
@@ -30,7 +30,7 @@ class Logger:
 
         if not log.hasHandlers():
             stream_handler = logging.StreamHandler()
-            filehandler = logging.FileHandler("Siri/logs/{}.txt".format(name), "a")
+            filehandler = logging.FileHandler("Johnny/logs/{}.txt".format(name), "a")
             stream_handler.setFormatter(FORMATTER)
             filehandler.setFormatter(FORMATTER)
             log.addHandler(filehandler)
@@ -46,7 +46,7 @@ class Logger:
         logger.handlers.clear()
         streamhandler = logging.StreamHandler()
         streamhandler.setFormatter(FORMATTER)
-        filehandler = logging.FileHandler(f"Siri/logs/discord.txt", "a")
+        filehandler = logging.FileHandler(f"Johnny/logs/discord.txt", "a")
         filehandler.setFormatter(FORMATTER)
         logger.addHandler(streamhandler)
         logger.addHandler(filehandler)

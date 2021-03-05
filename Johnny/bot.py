@@ -22,8 +22,11 @@ class Johnny(commands.Bot):
         self.cjamm = discodo.DPYClient(self)
         self.logger = Logger.defaultLogger("Johnny")
         self.discord = Logger.discordLogger()
+        self.loop = asyncio.get_event_loop()
 
-        asyncio.run(start_discodo())
+    async def on_ready(self):
+        await start_discodo()
+        self.logger.info("Lil 5ex!")
 
 
 def auto_load_cogs(bot: Johnny):
