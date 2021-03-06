@@ -1,12 +1,10 @@
 import asyncio
 import os
 
-import discodo
 import discord
 from discord.ext import commands
 
 from Johnny.utils.logger import Logger
-from Johnny.utils.music import run_discodo
 
 
 class Johnny(commands.Bot):
@@ -19,12 +17,8 @@ class Johnny(commands.Bot):
             activity=discord.Game("?help | 나를 불러 내 이름을 불러"),
         )
 
-        self.cjamm = discodo.DPYClient(self)
         self.logger = Logger.defaultLogger("Johnny")
         self.discord = Logger.discordLogger()
-        self.loop = asyncio.get_event_loop()
-
-        self.loop.run_until_complete(run_discodo())
 
     async def on_ready(self):
         self.logger.info("Lil 5ex!")

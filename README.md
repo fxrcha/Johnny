@@ -6,7 +6,7 @@
 
 * Of course, discord.py
 
-* Discodo
+* Lavalink.py
 
 ## Build and run
 

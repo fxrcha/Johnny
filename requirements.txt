@@ -1,4 +1,4 @@
-discodo
+lavalink
 discord.py
 python-dotenv
 jishaku
